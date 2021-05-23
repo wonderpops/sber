@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+    <html lang="ru">
+
+        <head>
+            <title>Сбервакансии</title>
+            <meta charset="UTF-8">
+            <meta name="viewport" content="width=device-width, initial-scale=1">
+            {% load static %}
+{#            <script src="{% static 'js/main.js' %}" type="text/javascript"></script>#}
+            <script src="{% static 'js/uikit.min.js' %}" type="text/javascript"></script>
+            <script src="{% static 'js/uikit-icons.min.js' %}" type="text/javascript"></script>
+            <link rel="stylesheet" href="{% static 'css/uikit.min.css' %}"/>
+        </head>
+
+    <body>
+        <nav class="uk-navbar-container uk-light uk-margin" uk-navbar style="background: linear-gradient(to left, #0097e0, #d7ce22, #0d7e3d);">
+            <div class="uk-navbar-left">
+
+                <a class="uk-navbar-toggle uk-hidden@m" uk-navbar-toggle-icon uk-toggle="target: #offcanvas-nav" style="color: white"></a>
+
+                <a class="uk-navbar-item uk-logo" href="/dashboard" style="color: white;">Сбервакансии</a>
+
+                <div class="uk-navbar-nav uk-visible@m">
+{#                    <li class="uk-active"><a href="/home">Главная</a></li>#}
+                </div>
+
+            </div>
+
+            <div class="uk-navbar-right">
+                <ul class="uk-navbar-nav uk-visible@m">
+                    <li class="uk-active"><a href="/accounts/logout" uk-icon="sign-out">Выйти</a></li>
+                </ul>
+            </div>
+        </nav>
+
+        {% block sidebar %}<!-- insert default navigation text for every page -->{% endblock %}
+        {% block content %}<!-- default content text (typically empty) -->{% endblock %}
+    </body>
+</html>

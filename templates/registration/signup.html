@@ -1,0 +1,106 @@
+{% extends 'login_base.html' %}
+
+{% block title %}<title>Регистрация</title>{% endblock %}
+
+{% block content %}
+    <div uk-grid style="padding-left: 50px; padding-right: 50px;">
+        <div class="uk-width-1-4@m">
+
+        </div>
+
+        <div class="uk-width-expand@m">
+            <div class="uk-card uk-card-large uk-card-default uk-padding uk-width-1-1" style="top: 20%; transform: translate(0, -18%);">
+                {% if form.errors %}
+                    <p style="color: red;"></p>
+                {% endif %}
+                <form method="post">
+                    {% csrf_token %}
+                    <h3 class="uk-card-title">Регистрация</h3>
+
+                    <div class="uk-margin">
+                        <label class="uk-form-label" for="form-stacked-text">Логин</label>
+                        <div class="uk-form-controls">
+                            <input class="uk-input" placeholder="Логин" type="text" name="username" maxlength="150" autofocus="" required="" id="id_username">
+                        </div>
+                    </div>
+
+                    <div class="uk-margin">
+                        <label class="uk-form-label" for="form-stacked-text">Имя</label>
+                        <div class="uk-form-controls">
+                            <input class="uk-input" placeholder="Имя" type="text" name="first_name" maxlength="150" required="" id="id_first_name">
+                        </div>
+                    </div>
+
+                    <div class="uk-margin">
+                        <label class="uk-form-label" for="form-stacked-text">Фамилия</label>
+                        <div class="uk-form-controls">
+                            <input class="uk-input" placeholder="Фамилия" type="text" name="last_name" maxlength="150"required="" id="id_last_name">
+                        </div>
+                    </div>
+
+                    <div class="uk-margin">
+                        <label class="uk-form-label" for="form-stacked-text">Почта</label>
+                        <div class="uk-form-controls">
+                            <input class="uk-input" placeholder="Почта" type="email" name="email" required="" id="id_email">
+                        </div>
+                    </div>
+
+                    <div class="uk-margin">
+                        <label class="uk-form-label" for="form-stacked-text">Код подразделения</label>
+                        <div class="uk-form-controls">
+                            <input class="uk-input" placeholder="Код подразделения" type="text" name="sub_code" maxlength="100" required="" id="id_sub_code">
+                        </div>
+                    </div>
+
+                    <div class="uk-margin">
+                        <label class="uk-form-label" for="form-stacked-text">Должность</label>
+                        <div class="uk-form-controls">
+                            <select class="uk-select" type="text" name="position" maxlength="100" required="" id="id_position">
+                                <option>СМО</option>
+                                <option>ВМО</option>
+                                <option>МО</option>
+                                <option>СКМ</option>
+                                <option>КМ</option>
+                                <option>К</option>
+                             </select>
+{#                            <input class="uk-input" placeholder="Должность" type="text" name="position" maxlength="100" required="" id="id_position">#}
+                        </div>
+                    </div>
+
+                    <div class="uk-margin">
+                        <label class="uk-form-label" for="form-stacked-text">Пароль</label>
+                        <div class="uk-form-controls">
+                            <input class="uk-input" placeholder="Пароль" type="password" name="password1" autocomplete="new-password" required="" id="id_password1">
+                        </div>
+                    </div>
+
+                    <div class="uk-margin">
+                        <label class="uk-form-label" for="form-stacked-text">Повторите пароль</label>
+                        <div class="uk-form-controls">
+                            <input class="uk-input" placeholder="Повторите пароль" type="password" name="password2" autocomplete="new-password" required="" id="id_password2">
+                        </div>
+                    </div>
+
+
+                    <div class="uk-margin">
+                            <div class="uk-form-controls">
+                                <button type="submit" class="uk-button uk-button-primary uk-width-1-1" style="background: #08a54a;">Отправить</button>
+                            </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+
+        <div class="uk-width-1-4@m">
+
+        </div>
+
+
+{#<h2>Sign up</h2>#}
+{#<form >#}
+{#  {% csrf_token %}#}
+{#    {{ u_form }}#}
+{#    {{ p_form }}#}
+{#  <button type="submit">Sign up</button>#}
+{#</form>#}
+{% endblock content %}

@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+
+{% block title %}Dashboard{% endblock %}
+
+{% block content %}
+    <h1>Добро пожаловать!</h1>
+    <h3>Ваш профиль:</h3>
+
+    <p>Логин: {{ user.username }}</p>
+    <p>Почта: {{ user.email }}</p>
+    <p>Имя: {{ user.first_name }}</p>
+    <p>Фамилия: {{ user.last_name }}</p>
+    <p>Код подразделения: {{ profile.sub_code }}</p>
+    <p>Должность: {{ profile.position }}</p>
+
+
+{#    <ul>#}
+{#    {% for item in user %}#}
+{#    <li>#}
+{#        <h1>{{ item.email }}</h1>#}
+{#     </li>#}
+{#        <li>#}
+{#        <h1>{{ item }}</h1>#}
+{#        </li>#}
+{#    {% endfor %}#}
+{#    </ul>#}
+
+{% endblock %}
